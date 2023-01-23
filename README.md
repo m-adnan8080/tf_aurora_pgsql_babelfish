@@ -5,6 +5,7 @@ This terraform code is used to setup AWS Aurora PostgreSQL Serverless with Babel
 1. AWS account
    - Login to AWS account and select the region where you want to setup
    - Goto VPC dashboard and select the desired VPC and note down the `vpc_id`
+   - Note down the VPC CIDR BLOCK
    - Goto subnets and filter subnets for the `vpc_id` and note down the subnet_ids
 2. Terraform v1+
 
@@ -25,6 +26,7 @@ Open `terraform.tfvars` file your editor and update below variables according to
 env                 = "development"
 aurora_name         = "aurora_name"
 database_name       = "database_name"
+allowed_cidr_blocks = ["172.31.0.0/16"]
 publicly_accessible = true/false
 max_capacity        = 16
 min_capacity        = 2
