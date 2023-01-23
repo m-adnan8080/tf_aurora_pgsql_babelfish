@@ -10,4 +10,40 @@ This terraform code is used to setup AWS Aurora PostgreSQL Serverless with Babel
 
 
 ## Usage:
-Update below variables the `terraform.tfvars` file
+Clone the repo
+```
+git clone https://github.com/m-adnan8080/tf_aurora_pgsql_babelfish.git
+```
+
+Change directory
+```
+cd tf_aurora_pgsql_babelfish
+```
+
+Open `terraform.tfvars` file your editor and update below variables according to your envirnoment
+```
+env                 = "development"
+aurora_name         = "aurora_name"
+database_name       = "database_name"
+publicly_accessible = true/false
+max_capacity        = 16
+min_capacity        = 2
+storage_encrypted   = true/false
+engine              = "aurora-postgresql"
+engine_version      = "11.13"
+engine_mode         = "serverless"
+vpc_id              = "vpc-xxxxxxxx"
+database_subnets    = ["subnet-xxxxxxa", "subnet-xxxxxxb", "subnet-xxxxxxc"]
+```
+
+Then run below commands to create the resources in AWS
+```
+terraform init
+terraform plan
+terraform apply
+```
+
+Cleanup: To remove run below commands
+```
+terraform destroy
+```

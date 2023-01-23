@@ -22,6 +22,3 @@ security_group_description = "Managed by Terraform"
 
 vpc_id                     = "vpc-32bf1255"
 database_subnets           = ["subnet-15fb7e19", "subnet-906057ad", "subnet-b65206ee"]
-username                   = "admin"
-password                   = "admin@123"
-
