@@ -29,3 +29,13 @@ database_subnets = ["subnet-15fb7e19", "subnet-906057ad", "subnet-b65206ee"]
 username            = "postgres"
 password            = "admin123"
 skip_final_snapshot = true
+
+# db_cluster_parameter_group_parameters = [
+#   {
+#     name         = "rds.babelfish_status"
+#     value        = "on"
+#     apply_method = "immediate"
+#   }
+# ]
+
+# db_cluster_parameter_group_name = "custom-aurora-postgresql13-babelfish"

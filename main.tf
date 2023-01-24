@@ -25,6 +25,8 @@ module "aurora" {
   instance_class                     = var.instance_class
   instances                          = var.instances
   serverlessv2_scaling_configuration = var.serverlessv2_scaling_configuration
+  db_cluster_parameter_group_parameters = var.db_cluster_parameter_group_parameters
+  db_cluster_parameter_group_name = var.db_cluster_parameter_group_name
   tags = {
     Application = "RDS"
     CreatedBy   = "terraform"

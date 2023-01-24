@@ -426,6 +426,18 @@ resource "aws_rds_cluster_parameter_group" "this" {
   tags = var.tags
 }
 
+resource "aws_rds_cluster_parameter_group" "custom-aurora-postgresql13-babelfish" {
+  name        = "custom-aurora-postgresql13-babelfish"
+  family      = "aurora-postgresql13"
+  description = "custom-aurora-postgresql13-babelfish"
+
+  parameter {
+      name         = "rds.babelfish_status"
+      value        = "on"
+      apply_method = "pending-reboot"
+  }
+}
+
 ################################################################################
 # DB Parameter Group
 ################################################################################

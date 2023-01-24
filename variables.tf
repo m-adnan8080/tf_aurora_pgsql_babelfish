@@ -31,6 +31,12 @@ variable "replica_count" {
   default     = 1
 }
 
+variable "db_cluster_parameter_group_parameters" {
+  description = "A list of DB cluster parameters to apply. Note that parameters may differ from a family to an other"
+  type        = list(map(string))
+  default     = []
+}
+
 variable "allowed_security_groups_aurora" {
   description = "A list of Security Group ID's to allow access to."
   type        = list(string)
