@@ -16,14 +16,6 @@ instances = {
   one = {}
 }
 
-# scaling_configuration = {
-#   auto_pause               = true
-#   min_capacity             = 2
-#   max_capacity             = 4
-#   seconds_until_auto_pause = 300
-#   timeout_action           = "RollbackCapacityChange"
-# }
-
 serverlessv2_scaling_configuration = {
   min_capacity = 0.5
   max_capacity = 2

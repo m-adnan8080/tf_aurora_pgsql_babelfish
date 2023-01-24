@@ -26,16 +26,29 @@ Open `terraform.tfvars` file your editor and update below variables according to
 env                 = "development"
 aurora_name         = "aurora_name"
 database_name       = "database_name"
-allowed_cidr_blocks = ["172.31.0.0/16"]
+babelfish           = true
+allowed_cidr_blocks = ["0.0.0.0/0"]
 publicly_accessible = true/false
 max_capacity        = 16
 min_capacity        = 2
 storage_encrypted   = true/false
 engine              = "aurora-postgresql"
-engine_version      = "11.13"
-engine_mode         = "serverless"
-vpc_id              = "vpc-xxxxxxxx"
-database_subnets    = ["subnet-xxxxxxa", "subnet-xxxxxxb", "subnet-xxxxxxc"]
+engine_version      = "13.7"
+engine_mode         = "provisioned"
+instance_class      = "db.serverless"
+instances = {
+  one = {}
+  # two = {}
+}
+
+serverlessv2_scaling_configuration = {
+  min_capacity = 0.5
+  max_capacity = 2
+}
+
+vpc_id           = "vpc-xxxxxxxx"
+database_subnets = ["subnet-xxxxxxxa", "subnet-xxxxxxxb", "subnet-xxxxxxxc"]
+skip_final_snapshot = true
 ```
 
 Then run below commands to create the resources in AWS
