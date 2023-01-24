@@ -9,8 +9,8 @@ apply_immediately          = true
 monitoring_interval        = 60
 scaling_configuration      = {
   auto_pause               = true
-  max_capacity             = 2
   min_capacity             = 2
+  max_capacity             = 4
   seconds_until_auto_pause = 300
   timeout_action           = "RollbackCapacityChange"
 }
@@ -22,3 +22,7 @@ security_group_description = "Managed by Terraform"
 
 vpc_id                     = "vpc-32bf1255"
 database_subnets           = ["subnet-15fb7e19", "subnet-906057ad", "subnet-b65206ee"]
+
+username                   = "postgres"
+password                   = "admin123"
+skip_final_snapshot        = true
