@@ -434,7 +434,7 @@ resource "aws_rds_cluster_parameter_group" "custom-aurora-postgresql13-babelfish
   parameter {
       name         = "rds.babelfish_status"
       value        = "on"
-      apply_method = "pending-reboot"
+      apply_method = "immediate"
   }
 }
 

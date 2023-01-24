@@ -38,4 +38,4 @@ skip_final_snapshot = true
 #   }
 # ]
 
-# db_cluster_parameter_group_name = "custom-aurora-postgresql13-babelfish"
+db_cluster_parameter_group_name = "custom-aurora-postgresql13-babelfish"
