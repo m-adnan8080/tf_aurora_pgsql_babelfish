@@ -233,6 +233,23 @@ variable "tags" {
   default     = {}
 }
 
+variable "serverlessv2_scaling_configuration" {
+  type        = map(string)
+  default     = {}
+}
+
+variable "instances" {
+  description = "A map of instances."
+  type        = map(map(string))
+  default     = {}
+}
+
+variable "instance_class" {
+  description = "Aurora serverless class."
+  type        = string
+  default     = ""
+}
+
 variable "performance_insights_enabled" {
   description = "Specifies whether Performance Insights is enabled or not."
   type        = bool
