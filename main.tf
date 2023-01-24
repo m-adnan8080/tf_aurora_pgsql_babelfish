@@ -40,6 +40,40 @@ module "aurora" {
     Application = "RDS"
     CreatedBy   = "terraform"
     Environment = "staging"
-    Name        = "aurora-babelfish"
+    Name        = "babelfish"
   }
 }
+
+# resource "aws_db_parameter_group" "aurora_db_parameter_group" {
+#   name        = "${var.aurora_name}-aurora-db-psql10-parameter-group"
+#   family      = "aurora-postgresql10"
+#   description = "${var.env}-${var.aurora_name}-aurora-db-psql10-parameter-group"
+#   lifecycle {
+#     create_before_destroy = true
+#   }
+
+# }
+
+# resource "aws_rds_cluster_parameter_group" "aurora_cluster_parameter_group" {
+#   name        = "${var.aurora_name}-aurora-cluster-psql10-parameter-group"
+#   family      = "aurora-postgresql10"
+#   description = "${var.env}-${var.aurora_name}-aurora-cluster-psql10-parameter-group"
+
+#   lifecycle {
+#     create_before_destroy = true
+#   }
+# }
+
+# resource "aws_security_group" "app_servers" {
+#   name_prefix = "app-servers"
+#   description = "For application servers"
+#   vpc_id      = var.vpc_id
+# }
+# resource "aws_security_group_rule" "allow_access" {
+#   type                     = "ingress"
+#   from_port                = module.aurora.cluster_port
+#   to_port                  = module.aurora.cluster_port
+#   protocol                 = "tcp"
+#   source_security_group_id = aws_security_group.app_servers.id
+#   security_group_id        = "sg-091b6f59d06f27c40"
+# }

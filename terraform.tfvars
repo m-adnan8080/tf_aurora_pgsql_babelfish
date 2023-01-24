@@ -1,9 +1,9 @@
 env                        = "staging"
-aurora_name                = "aurora-babelfish"
+aurora_name                = "babelfish"
 babelfish                  = true
 allowed_cidr_blocks        = ["172.31.0.0/16"]
-database_name              = ""
-publicly_accessible        = false
+database_name              = "babelfish"
+publicly_accessible        = true
 aurora_port                = "5432"
 apply_immediately          = true
 monitoring_interval        = 60
