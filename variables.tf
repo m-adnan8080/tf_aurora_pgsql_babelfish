@@ -240,8 +240,8 @@ variable "tags" {
 }
 
 variable "serverlessv2_scaling_configuration" {
-  type        = map(string)
-  default     = {}
+  type    = map(string)
+  default = {}
 }
 
 variable "instances" {

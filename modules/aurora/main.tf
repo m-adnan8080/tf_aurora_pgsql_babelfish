@@ -426,15 +426,18 @@ resource "aws_rds_cluster_parameter_group" "this" {
   tags = var.tags
 }
 
-resource "aws_rds_cluster_parameter_group" "custom-aurora-postgresql13-babelfish" {
-  name        = "custom-aurora-postgresql13-babelfish"
+resource "aws_rds_cluster_parameter_group" "custom-aurora-postgresql14-babelfish-compat-3" {
+  name        = "custom-aurora-postgresql14-babelfish-compat-3"
   family      = "aurora-postgresql13"
-  description = "custom-aurora-postgresql13-babelfish"
+  description = "custom-aurora-postgresql14-babelfish-compat-3"
 
   parameter {
       name         = "rds.babelfish_status"
       value        = "on"
-      apply_method = "immediate"
+  }
+  parameter {
+      name         = "babelfishpg_tds.tds_ssl_encrypt"
+      value        = "1"
   }
 }
 
